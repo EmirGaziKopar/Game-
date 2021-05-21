@@ -14,6 +14,7 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
     public Rigidbody2D rb; //Astronotumun üzerinde bir rigitbody var evet fakat ben ona oyun içersinden kod içersinden nasýl müdehale edeceðim rigit body cinsinden bir referans sayesinde 
     public SpriteRenderer sprite;
     int kontrol = 0; //false 
+    public float kuvvet_katsayisi_uydunun = 5f;
 
     public static float speed=1f; //hýzý buradan ayarlayabilirsiniz.
     // Start is called before the first frame update
@@ -117,6 +118,7 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
             rb.gravityScale = gravity_scale; //normal gravity scale'si 
             kontrol = 0;
         }
+        
 
         
     }
@@ -130,8 +132,19 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
 
         }
         
-            
-        
+        if (collision.gameObject.tag == "uydu" && kontrol == 0)
+        {
+            gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic; //statik olan öðeyi Dynamic yapar 
+            rb.gravityScale = 3.5f;
+            kontrol = 1;
+        }
+
+        else if (collision.gameObject.tag == "ufo" && kontrol == 1)
+        {
+            rb.gravityScale = gravity_scale; //normal gravity scale'si 
+            kontrol = 0;
+        }
+
     }
 
 }
