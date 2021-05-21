@@ -6,11 +6,15 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
 {
     protected Joystick joystick;
     protected Joybutton joybutton;
+    static Renderer rend;
     public bool isDead = false;
     public static int coins;
     public float hiz_katsayisi;
+    public float gravity_scale = 2f;
     public Rigidbody2D rb; //Astronotumun üzerinde bir rigitbody var evet fakat ben ona oyun içersinden kod içersinden nasýl müdehale edeceðim rigit body cinsinden bir referans sayesinde 
-    
+    public SpriteRenderer sprite;
+    int kontrol = 0; //false 
+
     public static float speed=1f; //hýzý buradan ayarlayabilirsiniz.
     // Start is called before the first frame update
     void Start() //guncelleme methodlarýndan herhangi birisi çaðýrýlmadan önce start fonksiyonu çaðýrýlýr oyun baþladýðýnda sadece ve sadece bir kez çalýþacak fonksiyonlarýn yerleþtirildiði yer
@@ -18,6 +22,8 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
         joystick = FindObjectOfType<Joystick>();
         joybutton = FindObjectOfType<Joybutton>();
         // örneðin oyun baþlangýç müziði
+        rend = GetComponent<Renderer>();
+        sprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -96,8 +102,37 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
             coins++;
             Debug.Log("Coin toplandi !!! ");
             Destroy(collision.gameObject); // Tepkimeye giren gameObject'e eriþip yok ediyoruz  
+            rend.material.color = Color.black;
+
+        }
+        if(collision.tag == "ufo" && kontrol == 0)
+        {
+            gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic; //statik olan öðeyi Dynamic yapar 
+            rb.gravityScale = -1f;
+            kontrol = 1;
         }
         
+        else if(collision.tag == "ufo" && kontrol == 1)
+        {
+            rb.gravityScale = gravity_scale; //normal gravity scale'si 
+            kontrol = 0;
+        }
+
+        
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "ufo")
+        {
+            Debug.Log("Burasi calisti");
+            transform.position = new Vector3(transform.position.x, transform.position.y, 5);
+            sprite.sortingOrder = -1; //order in layer deðiþti 
+
+        }
+        
+            
+        
+    }
+
 }
 

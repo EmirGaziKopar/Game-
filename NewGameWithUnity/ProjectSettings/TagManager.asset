@@ -10,6 +10,7 @@ TagManager:
   - platform
   - hro
   - hero
+  - ufo
   layers:
   - Default
   - TransparentFX
