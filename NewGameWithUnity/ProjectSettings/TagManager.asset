@@ -12,6 +12,7 @@ TagManager:
   - hero
   - ufo
   - uydu
+  - uydunun_platformu
   layers:
   - Default
   - TransparentFX

@@ -118,32 +118,38 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
             rb.gravityScale = gravity_scale; //normal gravity scale'si 
             kontrol = 0;
         }
-        
-
-        
-    }
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if(collision.gameObject.tag == "ufo")
-        {
-            Debug.Log("Burasi calisti");
-            transform.position = new Vector3(transform.position.x, transform.position.y, 5);
-            sprite.sortingOrder = -1; //order in layer deðiþti 
-
-        }
-        
-        if (collision.gameObject.tag == "uydu" && kontrol == 0)
+        if (collision.tag == "uydu" && kontrol == 0)
         {
             gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic; //statik olan öðeyi Dynamic yapar 
-            rb.gravityScale = 3.5f;
+            rb.gravityScale = -1f;
             kontrol = 1;
         }
 
-        else if (collision.gameObject.tag == "ufo" && kontrol == 1)
+        else if (collision.tag == "uydu" && kontrol == 1)
         {
             rb.gravityScale = gravity_scale; //normal gravity scale'si 
             kontrol = 0;
+            /*speed =+ rb.velocity.magnitude; Iþýnlama  */
         }
+        if(collision.tag == "uydunun_platformu" )
+        {
+            rb.gravityScale = gravity_scale; //normal gravity scale'si 
+        }
+
+
+
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "ufo")
+        {
+            Debug.Log("Burasi calisti");
+            transform.position = new Vector3(transform.position.x, transform.position.y, 5);
+            sprite.sortingOrder = -1; //order'in layer deðiþti 
+
+        }
+
+        
 
     }
 

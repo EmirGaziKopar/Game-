@@ -166,6 +166,28 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!68 &159736912
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159736905}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 4.660276, y: -0.22061655}
+  - {x: 4.6005354, y: 61.331417}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &165265476
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,8 +428,8 @@ GameObject:
   - component: {fileID: 451416355}
   - component: {fileID: 451416354}
   - component: {fileID: 451416356}
-  - component: {fileID: 451416357}
   - component: {fileID: 451416358}
+  - component: {fileID: 451416357}
   m_Layer: 0
   m_Name: uydu1
   m_TagString: uydu
@@ -556,37 +578,30 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -7.34432, y: 6.868076}
-  - {x: -2.1383047, y: 3.9023178}
+  - {x: -3.7243314, y: -3.3241282}
+  - {x: -3.7549994, y: 3.480571}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!251 &451416357
-PlatformEffector2D:
+--- !u!114 &451416357
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451416350}
   m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 0
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab0b113962a294419442d32136bd862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!68 &451416358
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -597,14 +612,14 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -7.539437, y: -4.916918}
-  - {x: -2.1383047, y: -2.7316194}
+  - {x: -5.5712876, y: -3.792263}
+  - {x: -5.547421, y: 3.946032}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -715,7 +730,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -64.6, y: 6.3, z: -163}
+  m_LocalPosition: {x: -53.6, y: 6.3, z: -163}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1488176497}
@@ -1370,7 +1385,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895273148}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -90.4, y: -2.7, z: -7.4}
+  m_LocalPosition: {x: -29.5, y: -0.3, z: -7.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2242,12 +2257,16 @@ PrefabInstance:
       value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 3844194603339934805, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.6091145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844194603339934805, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -30.8
+      value: -29.4
       objectReference: {fileID: 0}
     - target: {fileID: 3844194603339934805, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.3
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 3844194603339934805, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2292,6 +2311,10 @@ PrefabInstance:
     - target: {fileID: 3844194603339934808, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
       propertyPath: m_Name
       value: Platform_02 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844194603339934808, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
+      propertyPath: m_TagString
+      value: uydunun_platformu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b3269a5d5b11b74792bf5129f9cddae, type: 3}
