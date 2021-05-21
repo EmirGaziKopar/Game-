@@ -11,6 +11,7 @@ TagManager:
   - hro
   - hero
   - ufo
+  - uydu
   layers:
   - Default
   - TransparentFX
