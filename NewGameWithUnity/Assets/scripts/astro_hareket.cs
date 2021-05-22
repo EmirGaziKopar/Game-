@@ -135,6 +135,7 @@ public class astro_hareket : MonoBehaviour //MonoBehavior'dan türetilmiþ aslýnda
         {
             rb.gravityScale = gravity_scale; //normal gravity scale'si 
         }
+        
 
 
 

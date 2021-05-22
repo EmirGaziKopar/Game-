@@ -11,6 +11,7 @@ public class camera_follow : MonoBehaviour
     public float Speed_karsila = astro_hareket.speed;
     public float speed2;
     public static float hiz = 0f; //kamera hýzý burasý 500f ideal
+    public static Transform transform_camera;
 
     public float zaman;
 
@@ -54,6 +55,8 @@ public class camera_follow : MonoBehaviour
     private void Start()
     {
         camera_rigit = GetComponent<Rigidbody2D>(); //yukarýda tanýmladýðýmýz nesnenin ve 'rb' referans deðerinin nereyi referans alacaðýný burada belirttik 
+        
+        
 
     }
 
@@ -62,7 +65,11 @@ public class camera_follow : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        if (hap_ters.hap_yutma == 1) //yani true' ise 
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 180); //opsiyon 1
+           /* transform.localScale = new Vector3(1, -1, 1); */
+        }
         zaman += Time.deltaTime;
         if (zaman <= 7 && zaman >= 6 && sayac != 1)
         {

@@ -13,6 +13,7 @@ TagManager:
   - ufo
   - uydu
   - uydunun_platformu
+  - hap_tersdondur
   layers:
   - Default
   - TransparentFX
