@@ -11,10 +11,8 @@ GameObject:
   - component: {fileID: 7236292760048686415}
   - component: {fileID: 7236292760048686412}
   - component: {fileID: 7236292760048686413}
-  - component: {fileID: 6706245572510444140}
   - component: {fileID: 5851631064875312676}
   - component: {fileID: 5851631064875312703}
-  - component: {fileID: 5851631064875312702}
   m_Layer: 0
   m_Name: Platform_02 (12)
   m_TagString: uydunun_platformu
@@ -113,25 +111,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9.604055, y: 1.4953868}
   m_EdgeRadius: 0
---- !u!114 &6706245572510444140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7236292760048686402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cb250bd45f6934280f7fac07664a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BirdScript: {fileID: 0}
-  fark: 0
-  Borular: {fileID: 7236292760048686402}
-  yEkseni: 2
-  time: 2
-  xEkseni: 2
-  xEkseni2: 0
 --- !u!68 &5851631064875312676
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -173,22 +152,3 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &5851631064875312702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7236292760048686402}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cb250bd45f6934280f7fac07664a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BirdScript: {fileID: 0}
-  fark: 20
-  Borular: {fileID: 0}
-  yEkseni: 5
-  time: 0.7
-  xEkseni: 3
-  xEkseni2: 23

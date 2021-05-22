@@ -13,6 +13,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnObject(time));
+        
 
     }
 

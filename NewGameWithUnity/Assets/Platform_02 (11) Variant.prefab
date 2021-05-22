@@ -148,24 +148,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!114 &568946074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8007692964234138368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1cb250bd45f6934280f7fac07664a88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BirdScript: {fileID: 0}
-  Borular: {fileID: 8007692964234138368}
-  xEkseni: 5
-  time: 1
-  yEkseni: 3
-  isDead: 0
 --- !u!1001 &6519058097441275736
 PrefabInstance:
   m_ObjectHideFlags: 0
